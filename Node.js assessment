@@ -1,0 +1,11 @@
+create database testdb
+create table candidate(name varchar(100),email varchar(100),firstround int(40),secondround int(40),thirdround int(40));
+      insert into candidate(name,email,firstround,secondround,thirdround) values('albert', 'albert@gmail.com',5,5,5);
+      insert into candidate(name,email,firstround,secondround,thirdround) values('john', 'john@gmail.com',5,5,4);
+      insert into candidate(name,email,firstround,secondround,thirdround) values('jame', 'jame@gmail.com',5,5,3);
+      select * from candidate;
+create table testscore(name varchar(100),Totalmarks int(40));
+      select name(SUM(firstround),SUM(secondround),SUM(thirdround)) as Totalmarks from candidate
+      group by name;
+      select * from testscore;
+ 
